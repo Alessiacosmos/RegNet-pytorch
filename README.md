@@ -26,7 +26,7 @@ Prepare a train.txt(or a val.txt) file for training(testing) your custom dataset
   3. Run the train.py
 ```
 
-## 3.trest
+## 3.test
 ```
   1. Prepare the '.yml' file at first
   
