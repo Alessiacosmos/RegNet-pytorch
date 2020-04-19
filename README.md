@@ -6,13 +6,13 @@ The performance of this repository hasn't been tested because of lacking resourc
 # How to Use
 ## 1.Dataset
 ```
-You need prepare a train.txt or a val.txt file for training.
-  train.txt:
+Prepare a train.txt(or a val.txt) file for training(test).
+  in train.txt:
     your/data/path/img_0.jpg  0(label of img_0.jpg)
     your/data/path/img_1.jpg  1
     ......
     
-  The separator between img_path and its_label is `tab`
+  The separator between img_path and its_label is '\t'
 ```
 
 ## 2.training
