@@ -1,5 +1,5 @@
 # RegNet_pytorch
-A pytorch implement of RegNet (Designing Netowrk design spaces). The performance of this repository hasn't been tested. Original paper link: https://arxiv.org/pdf/2003.13678.pdf
+A pytorch implement of RegNet (Designing Netowrk design spaces). Original paper link: https://arxiv.org/pdf/2003.13678.pdf
 
 The performance of this repository hasn't been tested because of lacking resource on the computation, which may update in the future.
 
