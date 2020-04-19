@@ -1,0 +1,50 @@
+MODEL:
+  NUM_CLASSES: 6
+ANYNET:
+  STEM_W: 24
+  BLOCK_TPYE: res_bottleneck_block
+  DEPTHS: [1, 1, 4, 7]
+  WIDTHS: [24, 56, 152, 368]
+  STRIDES: [1, 2, 2, 2]
+  BOT_MULS: [1, 1, 1, 1]
+  GROUP_WS: [8, 8, 8, 8]
+  SE_R: 0.25
+BN:
+  ZERO_INIT_FINAL_GAMMA: False
+  CUSTOM_WEIGHT_DECAY: 0
+  USE_CUMTOM_WEIGHT_DECAY: False
+OPTIM:
+  OPTIMIZER: Adam           # OPTIMIZER:  Adam or SGD
+  BASE_LR: 0.005
+  LR_POLICY: steps          # LR_POLICY : 'steps', 'exp', 'cos' ********************
+  STEPS: [0, 5, 15, 20]     # for 'setps' policy
+  LR_MULT: 0.1              # learning rate multiplier for 'steps' policy
+  GAMMA: 0.1                # params for 'exponential lr_policy'
+  MAX_EPOCH: 30
+  MOMENTUM: 0.9
+  DAMPENING: 0.0            # momentum dampening
+  NESTEROV: True            # Nesterov momentum
+  WEIGHT_DECAY: 0.0001      # L2 regularization
+  WARMUP_FACTOR: 0.1
+  WARMUP_EPOCHS: 0
+TRAIN:
+  PATH: ../Work/DATA/train.txt  # path for Training data. Format in the txt: 'img_name'+'\t'+'label'
+  SPLIT: train
+  BATCH_SIZE: 24
+  IM_SIZE: 368
+  WEIGHTS:
+  RESUME:
+  EVAL_PERIOD: 1            # evaluating model when (epoch%EVAL_PERIOD==0)
+  SAVE_INTERNAL: 50         # saving model's checkpoint when (epoch%SAVE_INTERNAL==0)
+TEST:
+  PATH: ../Work/DATAval.txt
+  SPLIT: val
+  BATCH_SIZE: 16
+  IM_SIZE: 368
+  WEIGHTS:
+NUM_GPUS: 0
+DATA_LOADER:
+  NUM_WORKERS: 2
+CUDNN:
+  BENCHMARK: False
+OUT_DIR: anynet-result/try_result
